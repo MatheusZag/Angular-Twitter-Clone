@@ -1,0 +1,42 @@
+<div class="w-[650px] bg-white rounded-lg shadow p-6 mb-8">
+    <div class="flex justify-center w-full">
+        <!-- avatar circle -->
+        <app-avatar />
+        <!-- form -->
+        <div class="flex-1">
+            <!-- text-area -->
+            <textarea class=
+            "mb-2 bg-gray-200 resize-none border border-transparent rounded-lg py-2 px-4 block w-full appearance-none
+            font-light placeholder-gray-700
+            focus:outline-none focus:shadow-outline focus:bg-gray-100"
+            placeholder="What's happening..." rows="3" 
+            [maxlength]="tweetMaxLength" [(ngModel)]="tweetMessage" (input)="changeTweet()" (keyup.enter)="sendTweet()">
+            </textarea>
+
+            <!-- divider line -->
+            <div class="w-auto border rounded-lg"></div>
+
+            <!-- interactivity -->
+            <div class="flex justify-end items-baseline">
+
+                <!-- count characteres -->
+                <div class="mr-5 font-thin text-gray-500">
+                    <p>{{tweetRemain}}</p>
+                </div>
+
+                <!-- button -->
+                <div class="mt-5">
+                    <button type="button" 
+                    class="w-32 border border-transparent py-2 px-5 rounded-lg bg-blue-500 font-medium text-white shadow text-center
+                    focus:outline-none hover:bg-blue-600"
+                    (click)="sendTweet()">
+                        Tweet
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
